@@ -5,8 +5,7 @@ pipeline {
                            choices: ['dev','stage'],
                            description: '',
                            name: 'REQUESTED_ACTION')
-         }
-                           
+         }                   
                            
                   
          
@@ -24,10 +23,7 @@ pipeline {
                  stage('Three') {
                  when {
                           expression { params.REQUESTED_ACTION == 'dev'}  
-                       // {
-                        //  branch "master"
-                      //}
-                         
+                                              
                  }
                  steps {
                        echo "Moved to Development"
