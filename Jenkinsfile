@@ -1,5 +1,14 @@
 pipeline {
          agent any
+         parameters {
+                  choice (
+                           choices: ['dev','stage'],
+                           description: '',
+                           name: 'REQUESTED_ACTION')
+         }
+                           
+                           
+                  
          
          stages {
                  stage('One') {
@@ -14,9 +23,10 @@ pipeline {
                  }
                  stage('Three') {
                  when {
-                        {
-                          branch "master"
-                      }
+                          expresssion { params.REQUESTED_ACTION == 'dev'}  
+                       // {
+                        //  branch "master"
+                      //}
                          
                  }
                  steps {
