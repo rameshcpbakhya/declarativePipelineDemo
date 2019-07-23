@@ -20,9 +20,10 @@ pipeline {
                  }
                  stage('Three') {
                  when {
-                       not {
-                            branch "master"
-                       }
+                       //not {
+                          //  branch "master"
+                     //  }
+                          expresssion { params.REQUESTED_ACTION='greetings'}
                  }
                  steps {
                        echo "Hello"
