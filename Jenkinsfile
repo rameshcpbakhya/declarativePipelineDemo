@@ -23,7 +23,7 @@ pipeline {
                  }
                  stage('Three') {
                  when {
-                          expresssion { params.REQUESTED_ACTION == 'dev'}  
+                          expression { params.REQUESTED_ACTION == 'dev'}  
                        // {
                         //  branch "master"
                       //}
