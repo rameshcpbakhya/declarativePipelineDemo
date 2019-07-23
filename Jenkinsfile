@@ -23,7 +23,7 @@ pipeline {
                        //not {
                           //  branch "master"
                      //  }
-                          expresssion { params.REQUESTED_ACTION='greetings'}
+                          expression { params.REQUESTED_ACTION='greetings'}
                  }
                  steps {
                        echo "Hello"
