@@ -1,5 +1,12 @@
 pipeline {
          agent any
+         parameters {
+                  choice (
+                  choices: ['greetings','silence'],
+                           description: '',
+                           name: 'REQUESTED_ACTION')                          
+                 
+         }
          stages {
                  stage('One') {
                  steps {
