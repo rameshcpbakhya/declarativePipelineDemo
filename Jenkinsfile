@@ -1,12 +1,6 @@
 pipeline {
          agent any
-         parameters {
-                  choice (
-                  choices: ['greetings','silence'],
-                           description: '',
-                           name: 'REQUESTED_ACTION')                          
-                 
-         }
+         
          stages {
                  stage('One') {
                  steps {
@@ -20,10 +14,10 @@ pipeline {
                  }
                  stage('Three') {
                  when {
-                       //not {
-                          //  branch "master"
-                     //  }
-                          expression { params.REQUESTED_ACTION='greetings'}
+                        {
+                          branch "master"
+                      }
+                         
                  }
                  steps {
                        echo "Hello"
